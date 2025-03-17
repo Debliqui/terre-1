@@ -1,1 +1,1 @@
-# Manuel des nouveaux arrivant - Terre 1
+# Manuel des nouveaux arrivants - Terre 1
