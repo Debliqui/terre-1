@@ -1,0 +1,20 @@
+.settings {
+  width: 94px;
+  display: flex;
+  gap: 14px;
+  .themeBtn {
+    border: 0.5px solid #ffffff;
+    border-radius: 20px;
+    width: 22px;
+    height: 22px;
+    &.dark {
+      background-color: #000000;
+    }
+    &.blue {
+      background-color: #073c69;
+    }
+    &.light {
+      background-color: #dfdfdf;
+    }
+  }
+}
