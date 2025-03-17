@@ -1,8 +1,9 @@
-import "./App.scss"
 import { useContext, useEffect } from "react"
 import ThemeContext from "./contexts/ThemeContext"
 import Settings from "./component/Settings"
 
+import "./App.scss"
+import Earth from "./assets/PIA18033.svg"
 function App() {
   const { theme } = useContext(ThemeContext)
 
@@ -13,7 +14,12 @@ function App() {
 
   return (
     <main className="main">
-      <h1>Bienvenue</h1>
+      <img src={Earth} alt="" className="main__earth" />
+      <header className="main__header">
+        <h1>Terre 1</h1>
+        <h2>Manuel des nouveaux arrivants</h2>
+      </header>
+
       <Settings />
     </main>
   )
