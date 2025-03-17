@@ -1,0 +1,80 @@
+@mixin screen_mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen_tablet {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen_desktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+body.light {
+  --background-main: linear-gradient(-39deg, #797979, #dfdfdf);
+  --background-root: #ffffff;
+  --color: #000000;
+}
+
+body.dark {
+  --background-main: linear-gradient(
+    -39deg,
+    #36225e 25%,
+    rgba(0, 0, 0, 1) 56% 100%
+  );
+  --background-root: #302f2f;
+  --color: #ffffff;
+}
+
+body.blue {
+  --background-main: linear-gradient(-39deg, #0c141a, #073c69);
+  --background-root: #565555;
+  --color: #ffffff;
+}
+body {
+  background: var(--background-root);
+  color: var(--color);
+}
+
+.main {
+  background: var(--background-main);
+  color: var(--color);
+  height: 96vh;
+  display: flex;
+  margin: 18px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.settings {
+  width: 94px;
+  display: flex;
+  gap: 14px;
+  .themeBtn {
+    border: 0.5px solid #ffffff;
+    border-radius: 20px;
+    width: 22px;
+    height: 22px;
+    &.dark {
+      background-color: #000000;
+    }
+    &.blue {
+      background-color: #073c69;
+    }
+    &.light {
+      background-color: #dfdfdf;
+    }
+  }
+}
+
+button:hover {
+  opacity: 0.8;
+}
