@@ -42,6 +42,10 @@ body {
   color: var(--color);
 }
 
+span {
+  color: var(--color);
+}
+
 .main {
   background: var(--background-main);
   color: var(--color);
@@ -53,6 +57,7 @@ body {
   border-radius: 20px;
   position: relative;
   padding: 16px;
+  overflow: hidden;
   &__earth {
     position: absolute;
     top: 25%;
@@ -80,5 +85,5 @@ body {
 }
 
 button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
