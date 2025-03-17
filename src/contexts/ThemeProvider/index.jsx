@@ -1,41 +1,31 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ThemeContext from "../ThemeContext"
 
-const themes = {
-  light: {
-    background: "#ffffff",
-    color: "#000000",
-  },
-  dark: {
-    background: "#000000",
-    color: "#ffffff",
-  },
-  blue: {
-    background: "#001f3f",
-    color: "#ffffff",
-  },
+const getTheme = () => {
+  const theme = localStorage.getItem("theme")
+  if (!theme) {
+    // Par défaut, le thème "light" est utilisé
+    localStorage.setItem("theme", "light")
+    return "light"
+  }
+  return theme
 }
 
-// const getTheme = () => {
-//   const theme = localStorage.getItem("theme")
-//   if (!theme) {
-//     //Default theme is taken as light-theme
-//     localStorage.setItem("theme", "light")
-//     return "light"
-//   } else {
-//     return theme
-//   }
-// }
+export default function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(getTheme)
 
-export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light")
-
-  const toggleTheme = (newTheme) => {
-    setTheme(newTheme)
+  function toggleTheme(themeValue) {
+    setTheme(themeValue)
   }
 
+  useEffect(() => {
+    localStorage.setItem("theme", theme)
+    // Appliquer le thème sur l'élément `body` via une classe CSS
+    document.body.className = theme
+  }, [theme])
+
   return (
-    <ThemeContext.Provider value={{ theme: themes[theme], toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )
