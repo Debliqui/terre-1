@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Comprendre votre nouvel environnement",
+    "content": "Contenu du Collapse 1",
+    "sources": {
+      "src1": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 1",
+        "title": "Location1"
+      },
+      "src2": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 2",
+        "title": "Location2"
+      },
+      "src3": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Location3"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "title": "Comment se fondre parmi les humains ?",
+    "content": "Contenu du Collapse 2"
+  },
+  {
+    "id": 3,
+    "title": "Explorer les nations de la Terre",
+    "content": "Contenu du Collapse 3"
+  }
+]
