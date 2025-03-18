@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import ThemeContext from "./contexts/ThemeContext"
 import Settings from "./component/Settings"
-import Collapse from "./container/CollapseArticles"
+import CollapseArticles from "./container/CollapseArticles"
 
 import "./App.scss"
 import Earth from "./assets/PIA18033.svg"
@@ -22,7 +22,7 @@ function App() {
         <h2>Manuel des nouveaux arrivants</h2>
       </header>
       <section>
-        <Collapse />
+        <CollapseArticles />
       </section>
       <Settings />
     </main>

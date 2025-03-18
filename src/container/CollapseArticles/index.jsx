@@ -1,28 +1,11 @@
 import { useState } from "react"
+import Card from "../../component/Card"
+import ArticlesContent from "../../assets/data/articles-content.json"
 
 import "./index.scss"
-
 export default function CollapseArticles() {
-  const collapseItems = [
-    {
-      id: 1,
-      title: "Comprendre votre nouvel environnement",
-      content: "Contenu du Collapse 1",
-    },
-    {
-      id: 2,
-      title: "Comment se fondre parmi les humains ?",
-      content: "Contenu du Collapse 2",
-    },
-    {
-      id: 3,
-      title: "Explorer les nations de la Terre",
-      content: "Contenu du Collapse 3",
-    },
-  ]
-
   const [visible, setVisible] = useState(
-    Array(collapseItems.length).fill(false)
+    Array(ArticlesContent.length).fill(false)
   )
 
   const toggleVisibility = (index) => {
@@ -32,7 +15,7 @@ export default function CollapseArticles() {
   return (
     <div className="collapse">
       <div className="collapse__buttons">
-        {collapseItems.map((item, index) => (
+        {ArticlesContent.map((item, index) => (
           <button
             key={item.id}
             className={`collapse__button collapse__button__${item.id} ${
@@ -47,7 +30,7 @@ export default function CollapseArticles() {
         ))}
       </div>
       <div className="collapse__dropdowns">
-        {collapseItems.map((item, index) => (
+        {ArticlesContent.map((item, index) => (
           <div
             key={item.id}
             className={`collapse__dropdown collapse__dropdown__${item.id} ${
@@ -56,6 +39,18 @@ export default function CollapseArticles() {
           >
             <h2 className="collapse__dropdown__title">{item.title}</h2>
             <span className="separator" />
+            {item.sources && (
+              <div className="collapse__dropdown__content">
+                {Object.keys(item.sources).map((key) => (
+                  <Card
+                    key={key}
+                    src={item.sources[key].src}
+                    alt={item.sources[key].alt}
+                    title={item.sources[key].title}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
