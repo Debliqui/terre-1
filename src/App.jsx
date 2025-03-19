@@ -5,6 +5,7 @@ import CollapseArticles from "./container/CollapseArticles"
 
 import "./App.scss"
 import Earth from "./assets/PIA18033.svg"
+import Slider from "./container/Slider"
 
 function App() {
   const { theme } = useContext(ThemeContext)
@@ -24,7 +25,10 @@ function App() {
       <section>
         <CollapseArticles />
       </section>
-      <Settings />
+      <section className="main__bottom">
+        <Slider />
+        <Settings />
+      </section>
     </main>
   )
 }
