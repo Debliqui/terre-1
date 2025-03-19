@@ -52,43 +52,43 @@
         "title": "Les coutumes humaines"
       },
       "src2": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 2",
+        "src": "/assets/dropdown_2/manas-rb-wDdW-hF9pgM-unsplash.webp",
+        "alt": "Emojis suspendues représentant des émotions",
         "title": "Les émotions humaines"
       },
       "src3": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/jacqueline-brandwayn-S8MSj5VzHxQ-unsplash.webp",
+        "alt": "Plusieurs panneaux contenant des mots écrits en différentes langues",
         "title": "Langages et gestes"
       },
       "src4": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/charlesdeluvio-rRWiVQzLm7k-unsplash.webp",
+        "alt": "Deux personnes discutant autour d'une table",
         "title": "L’art de la discussion"
       },
       "src5": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/vasilis-caravitis-KhWNxsFWU84-unsplash.webp",
+        "alt": "Vitrine avec 3 mannequins habillés de vêtements",
         "title": "S’habiller comme eux"
       },
       "src6": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/anna-bratiychuk-S16wIj4Wy2w-unsplash.webp",
+        "alt": "Table remplie de plats alignés",
         "title": "Découvrir la cuisine humaine"
       },
       "src7": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/pickled-stardust-pDDLjuMFCWI-unsplash.webp",
+        "alt": "Pile d'objets en équilibre",
         "title": "Loisirs et divertissements"
       },
       "src8": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/alex-kotliarskyi-QBpZGqEMsKg-unsplash.webp",
+        "alt": "Vue sur un open space",
         "title": "Travailler comme un terrien"
       },
       "src9": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_2/claudio-schwarz-k39RGHmLoV8-unsplash.webp",
+        "alt": "Painture montrant deux mains se touchant du bout des doigts",
         "title": "Créer des liens"
       }
     }
@@ -99,43 +99,43 @@
     "content": "Contenu du Collapse 3",
     "sources": {
       "src1": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 1",
+        "src": "/assets/dropdown_3/eduard-delputte-IqUWW56sBkk-unsplash.webp",
+        "alt": "Drapeau des pays de l'Union Européenne alignés",
         "title": "L’Europe"
       },
       "src2": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 2",
+        "src": "/assets/dropdown_3/alice-triquet-HeEJU3nrg_0-unsplash.webp",
+        "alt": "Vue sur un lac entouré de montagnes",
         "title": "Amérique du Nord"
       },
       "src3": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/francisco-rioseco-a717fD-aego-unsplash.webp",
+        "alt": "Vue sur un bateau de pêche avec la ville en arrière plan",
         "title": "Amérique centrale"
       },
       "src4": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/pedro-lastra-oDZyswNe6jg-unsplash.webp",
+        "alt": "Paysage du Pérou",
         "title": "Amérique du Sud"
       },
       "src5": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/magdalena-kula-manchee-mMQPh3gInCQ-unsplash.webp",
+        "alt": "Vue sur la savane Africaine",
         "title": "Afrique"
       },
       "src6": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/anatoliy-gromov-ejxNZTKe7YY-unsplash.webp",
+        "alt": "Rue de ville d'Asie avec des néons",
         "title": "Asie"
       },
       "src7": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/florencia-lewis-hfJVxvfGNAQ-unsplash.webp",
+        "alt": "Vue de la ville de Sydney",
         "title": "Océanie"
       },
       "src8": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
+        "src": "/assets/dropdown_3/jay-ruzesky-nvBfwtaUBnI-unsplash.webp",
+        "alt": "Vue sur un Iceberg",
         "title": "Antarctique"
       }
     }
