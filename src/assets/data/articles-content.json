@@ -5,30 +5,139 @@
     "content": "Contenu du Collapse 1",
     "sources": {
       "src1": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 1",
-        "title": "Location1"
+        "src": "/assets/dropdown_1/as4-01-410~small.webp",
+        "alt": "La planète Terre vue de l'espace",
+        "title": "Localisation dans l’Univers"
       },
       "src2": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 2",
-        "title": "Location2"
+        "src": "/assets/dropdown_1/nicolas-j-leclercq-va_nrBLonf8-unsplash.webp",
+        "alt": "Aurores boréales vue des glaciers",
+        "title": "Mystères du ciel terrestres"
       },
       "src3": {
-        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
-        "alt": "Image 3",
-        "title": "Location3"
+        "src": "/assets/dropdown_1/PIA17669.webp",
+        "alt": "Soleil en éruption",
+        "title": "Le Soleil"
+      },
+      "src4": {
+        "src": "/assets/dropdown_1/montagnes.webp",
+        "alt": "Chaine de montagnes sur fond de couché de soleil",
+        "title": "Les géants de pierre"
+      },
+      "src5": {
+        "src": "/assets/dropdown_1/volcans.webp",
+        "alt": "Volcans en éruption",
+        "title": "Les gardiens de feu"
+      },
+      "src6": {
+        "src": "/assets/dropdown_1/centre_de_la terre.webp",
+        "alt": "Vue en coupe de la Terre",
+        "title": "Au cœur de la planète"
+      },
+      "src7": {
+        "src": "/assets/dropdown_1/dans_les_profondeurs.webp",
+        "alt": "Corail dans les profondeurs",
+        "title": "Les abysses, un monde secret"
       }
     }
   },
   {
     "id": 2,
     "title": "Comment se fondre parmi les humains ?",
-    "content": "Contenu du Collapse 2"
+    "content": "Contenu du Collapse 2",
+    "sources": {
+      "src1": {
+        "src": "/assets/dropdown_2/onur-kaya-B84r56_cwtk-unsplash.webp",
+        "alt": "Scène représentant une fête",
+        "title": "Les coutumes humaines"
+      },
+      "src2": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 2",
+        "title": "Les émotions humaines"
+      },
+      "src3": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Langages et gestes"
+      },
+      "src4": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "L’art de la discussion"
+      },
+      "src5": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "S’habiller comme eux"
+      },
+      "src6": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Découvrir la cuisine humaine"
+      },
+      "src7": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Loisirs et divertissements"
+      },
+      "src8": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Travailler comme un terrien"
+      },
+      "src9": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Créer des liens"
+      }
+    }
   },
   {
     "id": 3,
     "title": "Explorer les nations de la Terre",
-    "content": "Contenu du Collapse 3"
+    "content": "Contenu du Collapse 3",
+    "sources": {
+      "src1": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 1",
+        "title": "L’Europe"
+      },
+      "src2": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 2",
+        "title": "Amérique du Nord"
+      },
+      "src3": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Amérique centrale"
+      },
+      "src4": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Amérique du Sud"
+      },
+      "src5": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Afrique"
+      },
+      "src6": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Asie"
+      },
+      "src7": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Océanie"
+      },
+      "src8": {
+        "src": "/assets/dropdown_1/usgs-inNzGtPrkHk-unsplash.jpg",
+        "alt": "Image 3",
+        "title": "Antarctique"
+      }
+    }
   }
 ]

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Card from "../../component/Card"
+import Scroller from "../Scroller"
 import ArticlesContent from "../../assets/data/articles-content.json"
 
 import "./index.scss"
@@ -39,9 +40,9 @@ export default function CollapseArticles() {
           >
             <h2 className="collapse__dropdown__title">{item.title}</h2>
             <span className="separator" />
-            {item.sources && (
-              <div className="collapse__dropdown__content">
-                {Object.keys(item.sources).map((key) => (
+            <Scroller>
+              {item.sources &&
+                Object.keys(item.sources).map((key) => (
                   <Card
                     key={key}
                     src={item.sources[key].src}
@@ -49,8 +50,7 @@ export default function CollapseArticles() {
                     title={item.sources[key].title}
                   />
                 ))}
-              </div>
-            )}
+            </Scroller>
           </div>
         ))}
       </div>
