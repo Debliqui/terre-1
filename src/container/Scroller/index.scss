@@ -8,15 +8,16 @@
   &__button {
     position: absolute;
     border: none;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: #e3e3e3;
     padding: 0;
     cursor: pointer;
     .arrow {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
   }
   &__content {
@@ -34,6 +35,6 @@
     top: 8px;
   }
   .down {
-    bottom: 21px;
+    bottom: 24px;
   }
 }
