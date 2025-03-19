@@ -58,6 +58,7 @@ $width-open: 340px;
     align-items: center;
     padding: 20px;
     transition: left $transition-duration;
+    z-index: 1;
     &.open {
       left: 0;
     }
