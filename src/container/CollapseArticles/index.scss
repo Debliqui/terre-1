@@ -1,3 +1,9 @@
+@mixin screen_mobile {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 $bg-color1: var(--background-root);
 $bg-color2: #a4a4a4;
 $bg-color3: var(--color);
@@ -64,6 +70,11 @@ $width-open: 340px;
     }
     &__1 {
       background-color: $bg-color1;
+      .card__caption__title {
+        color: var(--color);
+        font-family: var(--title-font);
+        font-size: 16px;
+      }
     }
     &__2 {
       background-color: $bg-color2;
@@ -72,6 +83,10 @@ $width-open: 340px;
     &__3 {
       background-color: $bg-color3;
       color: $bg-color1;
+
+      .card__caption__title {
+        color: $bg-color1;
+      }
     }
     &__title {
       font-family: var(--title-font);
@@ -86,4 +101,10 @@ $width-open: 340px;
   width: 100px;
   height: 4px;
   background-color: #ff0000;
+}
+
+.modal-open {
+  border: none;
+  background-color: transparent;
+  text-align: left;
 }
