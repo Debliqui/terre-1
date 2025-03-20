@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Card from "../../component/Card"
 import Scroller from "../Scroller"
+import ArticlesModal from "../../component/AticlesModal"
+
 import ArticlesContent from "../../assets/data/articles-content.json"
 
 import "./index.scss"
@@ -9,8 +11,18 @@ export default function CollapseArticles() {
     Array(ArticlesContent.length).fill(false)
   )
 
+  const [modalData, setModalData] = useState(null)
+
   const toggleVisibility = (index) => {
     setVisible((prev) => prev.map((state, i) => (i === index ? !state : state)))
+  }
+
+  const openModal = (data) => {
+    setModalData(data)
+  }
+
+  const closeModal = () => {
+    setModalData(null)
   }
 
   return (
@@ -43,17 +55,32 @@ export default function CollapseArticles() {
             <Scroller>
               {item.sources &&
                 Object.keys(item.sources).map((key) => (
-                  <Card
+                  <button
                     key={key}
-                    src={item.sources[key].src}
-                    alt={item.sources[key].alt}
-                    title={item.sources[key].title}
-                  />
+                    className="modal-open"
+                    onClick={() =>
+                      openModal({
+                        src: item.sources[key].src,
+                        alt: item.sources[key].alt,
+                        title: item.sources[key].title,
+                        subtitle: item.sources[key].subtitle,
+                        description: item.sources[key].description,
+                      })
+                    }
+                  >
+                    <Card
+                      src={item.sources[key].src}
+                      alt={item.sources[key].alt}
+                      title={item.sources[key].title}
+                    />
+                  </button>
                 ))}
             </Scroller>
           </div>
         ))}
       </div>
+
+      {modalData && <ArticlesModal data={modalData} onClose={closeModal} />}
     </div>
   )
 }

@@ -1,0 +1,103 @@
+@mixin screen_mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.articles-modal {
+  display: flex;
+  width: 150vh;
+  height: 80vh;
+  background-color: var(--background-root);
+  border: none;
+  border-radius: 20px;
+  z-index: 2;
+  position: relative;
+  padding: 0;
+  @include screen_mobile {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    & i {
+      font-size: 25px;
+      color: var(--color);
+    }
+  }
+  &__image-container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8a8a8a;
+    @include screen_mobile {
+      width: 100%;
+      height: 40%;
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    @include screen_mobile {
+      object-fit: cover;
+    }
+  }
+  &__content {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    color: var(--color);
+    @include screen_mobile {
+      width: 100%;
+      height: 60%;
+    }
+    &__title {
+      font-family: var(--body-font);
+      font-size: 30px;
+      font-weight: bold;
+      @include screen_mobile {
+        font-size: 24px;
+        width: 80%;
+        text-align: center;
+      }
+    }
+    &__text {
+      width: 80%;
+      &__subtitle {
+        font-family: var(--body-font);
+        font-size: 24px;
+        margin-bottom: 20px;
+        @include screen_mobile {
+          font-size: 20px;
+        }
+      }
+      &__description {
+        font-family: var(--body-font);
+        font-size: 20px;
+        text-align: left;
+        overflow-y: scroll;
+        @include screen_mobile {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.articles-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
