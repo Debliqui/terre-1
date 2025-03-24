@@ -26,31 +26,33 @@ export default function CollapseArticles() {
   }
 
   return (
-    <div className="collapse">
-      <div className="collapse__buttons">
+    <div className="collapse-articles">
+      <div className="collapse-articles__buttons">
         {ArticlesContent.map((item, index) => (
           <button
             key={item.id}
-            className={`collapse__button collapse__button__${item.id} ${
-              visible[index] ? "active" : ""
-            }`}
+            className={`collapse-articles__button collapse-articles__button__${
+              item.id
+            } ${visible[index] ? "active" : ""}`}
             onClick={() => toggleVisibility(index)}
           >
             {!visible[index] ? (
-              <span className="collapse__button__title">{item.title}</span>
+              <span className="collapse-articles__button__title">
+                {item.title}
+              </span>
             ) : null}
           </button>
         ))}
       </div>
-      <div className="collapse__dropdowns">
+      <div className="collapse-articles__dropdowns">
         {ArticlesContent.map((item, index) => (
           <div
             key={item.id}
-            className={`collapse__dropdown collapse__dropdown__${item.id} ${
-              visible[index] ? "open" : ""
-            }`}
+            className={`collapse-articles__dropdown collapse-articles__dropdown__${
+              item.id
+            } ${visible[index] ? "open" : ""}`}
           >
-            <h2 className="collapse__dropdown__title">{item.title}</h2>
+            <h2 className="collapse-articles__dropdown__title">{item.title}</h2>
             <span className="separator" />
             <Scroller>
               {item.sources &&

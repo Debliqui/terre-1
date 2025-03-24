@@ -1,3 +1,9 @@
+@mixin screen_mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
 .slider {
   display: flex;
   width: 300px;
@@ -5,6 +11,10 @@
   position: relative;
   border: 1px solid #ffff;
   border-radius: 8px;
+  @include screen_mobile {
+    width: 230px;
+    height: 130px;
+  }
   &__button {
     position: absolute;
     border: none;
