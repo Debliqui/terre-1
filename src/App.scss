@@ -49,42 +49,87 @@ span {
 .main {
   background: var(--background-main);
   color: var(--color);
-  height: 92vh;
+  height: 96vh;
   display: flex;
   margin: 18px;
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
   position: relative;
-  padding: 16px;
   overflow: hidden;
   &__earth {
     position: absolute;
-    top: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @include screen_tablet {
-      width: 450px;
-      height: 450px;
+      width: 380px;
+      height: 380px;
     }
     @include screen_mobile {
-      width: 400px;
-      height: 400px;
+      width: 270px;
+      height: 270px;
     }
   }
 
   &__header {
     width: 100%;
+    padding: 16px;
+    &__content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+  }
+  &__navigation {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+    align-items: end;
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 16px;
+      width: 100%;
+      @include screen_mobile {
+        margin-bottom: -90px;
+        z-index: 1;
+      }
+      @media screen and (max-width: 500px) {
+        margin-bottom: -20px;
+      }
+      .popUp {
+        &__content {
+          position: absolute;
+          right: 28px;
+          bottom: 50%;
+          transform: translate(-5%, 35%);
+        }
+        &__content form {
+          display: flex;
+          flex-direction: column;
+        }
+        .info {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+    }
   }
   &__bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
+    width: 100%;
+    padding: 0 16px 16px 16px;
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      padding: 0 16px;
+    }
   }
 }
 

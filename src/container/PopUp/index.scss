@@ -1,0 +1,125 @@
+.popUp {
+  &__openBtn {
+    width: 26px;
+    height: 78px;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    display: inline-block;
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+    letter-spacing: 0;
+    font-family: var(--title-font);
+    font-size: 16px;
+    color: var(--color);
+    background-color: var(--background-root);
+  }
+  &__content {
+    width: 250px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border: none;
+    border-radius: 10px;
+    background: var(--background-root);
+    .info {
+      margin-top: -12px;
+      &__content {
+        width: 95%;
+      }
+      &__title {
+        font-size: 24px;
+        font-family: var(--body-font);
+        font-weight: bold;
+      }
+    }
+    .contactForm {
+      gap: 6px;
+      & label {
+        font-family: var(--body-font);
+        font-size: 14px;
+        font-weight: 300;
+      }
+      &__title {
+        font-family: var(--body-font);
+        font-size: 18px;
+      }
+      &__description {
+        font-size: 14px;
+      }
+      .submitBtn {
+        width: 160px;
+        height: 40px;
+        border: 1px solid;
+        background: var(--background-main);
+        color: var(--color);
+        outline: none;
+        font-size: 22px;
+        border-radius: 40px;
+        text-align: center;
+        box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 0 auto;
+        &__text {
+          font-size: 18px;
+        }
+      }
+      .check-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        right: -40px;
+        opacity: 0;
+      }
+      .check-box svg {
+        width: 24px;
+        margin: 7px;
+      }
+
+      svg path {
+        stroke-width: 3;
+        stroke: #fff;
+        stroke-dasharray: 34;
+        stroke-dashoffset: 34;
+        stroke-linecap: round;
+      }
+
+      .send {
+        background: #f00;
+        transition: 1s;
+      }
+
+      .send .check-box {
+        right: 0;
+        opacity: 1;
+        transition: 1s;
+      }
+
+      .send p {
+        margin-right: 66px;
+        transition: 1s;
+      }
+
+      .send svg path {
+        stroke-dashoffset: 0;
+        transition: 1s;
+        transition-delay: 1s;
+      }
+    }
+  }
+  &__closeBtn {
+    border: none;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    & i {
+      font-size: 18px;
+      color: var(--color);
+    }
+  }
+}
