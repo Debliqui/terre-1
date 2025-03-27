@@ -34,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
     @include screen_tiny {
       width: 25px;
     }
@@ -41,11 +42,11 @@
       opacity: 0.5;
     }
   }
-  .left {
+  .prev {
     left: 0;
     border-radius: 8px 0 0 8px;
   }
-  .right {
+  .next {
     right: 0;
     border-radius: 0 8px 8px 0;
   }
@@ -53,9 +54,28 @@
     width: 25px;
     height: 25px;
   }
+  .pause {
+    width: 50px;
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    color: #ffff;
+    &:hover .play-pause {
+      display: block;
+    }
+  }
+  .play-pause {
+    display: none;
+    position: absolute;
+    right: -84px;
+    font-family: var(--title-font);
+    font-size: 16px;
+    min-width: 80px;
+    text-align: left;
+  }
   &__content {
     overflow: hidden;
-    width: 300px;
+    width: 100%;
     position: relative;
     &__slide {
       position: absolute;
