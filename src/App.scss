@@ -171,9 +171,9 @@ span {
       display: flex;
       justify-content: space-between;
       align-items: end;
-      padding: 0 16px;
+      padding: 0 16px 0 32px;
       @include screen_mobile {
-        padding: 0px 8px;
+        padding: 0px 8px 0 32px;
       }
     }
   }
