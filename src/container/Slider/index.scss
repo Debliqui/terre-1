@@ -63,6 +63,10 @@
     &:hover .play-pause {
       display: block;
     }
+    @include screen_tiny {
+      width: 25px;
+      height: 25px;
+    }
   }
   .play-pause {
     display: none;
