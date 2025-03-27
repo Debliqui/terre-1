@@ -1,3 +1,9 @@
+@mixin screen_tiny {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin screen_mobile {
   @media screen and (max-width: 768px) {
     @content;
@@ -20,6 +26,7 @@ body.light {
   --background-main: linear-gradient(-39deg, #797979, #dfdfdf);
   --background-root: #ffffff;
   --color: #000000;
+  --color-reverse: #ffffff;
 }
 
 body.dark {
@@ -30,12 +37,14 @@ body.dark {
   );
   --background-root: #302f2f;
   --color: #ffffff;
+  --color-reverse: #000000;
 }
 
 body.blue {
   --background-main: linear-gradient(-39deg, #0c141a, #073c69);
   --background-root: #565555;
   --color: #ffffff;
+  --color-reverse: #000000;
 }
 body {
   background: var(--background-root);
@@ -63,12 +72,16 @@ span {
     left: 50%;
     transform: translate(-50%, -50%);
     @include screen_tablet {
-      width: 380px;
-      height: 380px;
+      width: 384px;
+      height: 384px;
     }
     @include screen_mobile {
-      width: 270px;
-      height: 270px;
+      width: 272px;
+      height: 272px;
+    }
+    @include screen_tiny {
+      width: 208px;
+      height: 208px;
     }
   }
 
@@ -79,7 +92,27 @@ span {
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-between;
+      align-items: center;
       padding: 0 16px;
+      @include screen_mobile {
+        padding: 0 8px;
+      }
+      & h1 {
+        @include screen_mobile {
+          font-size: 20px;
+        }
+        @include screen_tiny {
+          font-size: 18px;
+        }
+      }
+      & h2 {
+        @include screen_mobile {
+          font-size: 14px;
+        }
+        @include screen_tiny {
+          font-size: 12px;
+        }
+      }
     }
   }
   &__navigation {
@@ -97,8 +130,8 @@ span {
         margin-bottom: -90px;
         z-index: 1;
       }
-      @media screen and (max-width: 500px) {
-        margin-bottom: -20px;
+      @include screen_tiny {
+        margin-bottom: 0;
       }
       .popUp {
         &__content {
@@ -106,6 +139,16 @@ span {
           right: 28px;
           bottom: 50%;
           transform: translate(-5%, 35%);
+          z-index: 2;
+          @include screen_mobile {
+            right: 50%;
+            transform: translate(50%, 50%);
+          }
+          @include screen_tiny {
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+          }
         }
         &__content form {
           display: flex;
@@ -129,6 +172,9 @@ span {
       justify-content: space-between;
       align-items: end;
       padding: 0 16px;
+      @include screen_mobile {
+        padding: 0px 8px;
+      }
     }
   }
 }

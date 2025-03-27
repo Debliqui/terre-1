@@ -9,7 +9,7 @@ function PopUpContent({ title, children, toggleVisibility }) {
       </button>
       <div className="info">
         <h2 className="info__title">{title}</h2>
-        <span className="separator" />
+        <hr className="separator" />
         {children}
       </div>
     </div>
@@ -62,7 +62,7 @@ export default function PopUp() {
           <label htmlFor="email">Email</label>
           <input type="email" id="email" maxLength={500} required />
           <label htmlFor="message">Message</label>
-          <textarea id="message" required />
+          <textarea id="message" required rows="5" cols="33" maxLength={500} />
           <button className="submitBtn" ref={submitBtnRef}>
             <p className="submitBtn__text" ref={btnTextRef}>
               Envoyer
@@ -81,11 +81,30 @@ export default function PopUp() {
         isVisible={visiblePopUp === "about"}
         toggleVisibility={() => toggleVisibility("about")}
       >
-        <p>
-          Se manuel est conçu pour guider les nouveaux arrivants dans la
-          découverte de Terre 1, de ses merveilles, et de ses habitants. Que
-          vous exploriez les cieux, les abysses ou les cultures humaines, ce
-          manuel est là pour éclairer votre voyage. Bonne exploration!
+        <h3 className="info__content__title">Bienvenue sur Terre 1!</h3>
+        <p className="info__content__texte">
+          Se guide est conçu pour les nouveaux arrivants découvrant notre belle
+          planète. <br />
+          {""}
+          <br />
+          Ce site est votre manuel d'accompagnement pour comprendre les
+          merveilles de la Terre, apprendre à interagir avec ses habitants et
+          explorer ses nombreuses nations fascinantes.
+          <br />
+          {""}
+          <br />
+          Que vous soyez curieux des cieux au-dessus de nous, des mystères des
+          abysses ou des cultures humaines, Terre 1 est là pour illuminer votre
+          voyage. <br />
+          {""}
+          <br />
+          C'est une invitation à observer, apprendre et embrasser la diversité
+          de notre monde.
+          <br />
+          {""}
+          <br />
+          Laissez-nous être votre compagnon pour naviguer dans cette nouvelle
+          aventure!
         </p>
       </PopUpButton>
     </>

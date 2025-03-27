@@ -1,5 +1,11 @@
 @mixin screen_mobile {
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen_tiny {
+  @media screen and (max-width: 500px) {
     @content;
   }
 }
@@ -27,21 +33,32 @@ $width-open: 340px;
   }
   &__button {
     width: 26px;
-    height: 60px;
     border: none;
     border-radius: 0 10px 10px 0;
+    display: inline-block;
+    writing-mode: vertical-lr;
     transition: margin-left $transition-duration;
+    font-family: var(--title-font);
+    font-size: 16px;
+    padding: 16px 0;
+    @include screen_tiny {
+      font-size: 14px;
+      padding: 14px 0;
+    }
     &.active {
       margin-left: $width-open;
     }
     &__1 {
       background-color: $bg-color1;
+      color: var(--color);
     }
     &__2 {
       background-color: $bg-color2;
+      color: #000;
     }
     &__3 {
       background-color: $bg-color3;
+      color: var(--color-reverse);
     }
     &__title {
       visibility: hidden;
@@ -49,9 +66,6 @@ $width-open: 340px;
       display: block;
       text-align: left;
       margin-left: 30px;
-    }
-    &:hover &__title {
-      visibility: visible;
     }
   }
   &__dropdown {
@@ -65,8 +79,30 @@ $width-open: 340px;
     padding: 20px;
     transition: left $transition-duration;
     z-index: 2;
+    gap: 8px;
     &.open {
       left: 0;
+      @media screen and (max-width: 412px) {
+        width: 82vw;
+      }
+    }
+    &__header {
+      display: flex;
+    }
+    &__closeBtn {
+      border: none;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      cursor: pointer;
+      display: none;
+      @include screen_mobile {
+        display: block;
+      }
+      & i {
+        font-size: 18px;
+        color: var(--color);
+      }
     }
     &__1 {
       background-color: $bg-color1;
@@ -75,10 +111,16 @@ $width-open: 340px;
         font-family: var(--title-font);
         font-size: 16px;
       }
+      & i {
+        color: var(--color);
+      }
     }
     &__2 {
       background-color: $bg-color2;
       color: #000;
+      & i {
+        color: #000;
+      }
     }
     &__3 {
       background-color: $bg-color3;
@@ -87,24 +129,25 @@ $width-open: 340px;
       .card__caption__title {
         color: $bg-color1;
       }
+      & i {
+        color: var(--color-reverse);
+      }
     }
     &__title {
       font-family: var(--title-font);
       font-size: 20px;
-      margin-bottom: 16px;
     }
   }
 }
 
 .separator {
-  display: block;
   width: 100px;
-  height: 4px;
-  background-color: #ff0000;
+  border: 1.5px solid #ff0000;
 }
 
 .modal-open {
   border: none;
   background-color: transparent;
   text-align: left;
+  padding: 0;
 }

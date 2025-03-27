@@ -36,24 +36,30 @@ export default function CollapseArticles() {
             } ${visible[index] ? "active" : ""}`}
             onClick={() => toggleVisibility(index)}
           >
-            {!visible[index] ? (
-              <span className="collapse-articles__button__title">
-                {item.title}
-              </span>
-            ) : null}
+            {item.catchphrase}
           </button>
         ))}
       </div>
       <div className="collapse-articles__dropdowns">
         {ArticlesContent.map((item, index) => (
-          <div
+          <aside
             key={item.id}
             className={`collapse-articles__dropdown collapse-articles__dropdown__${
               item.id
             } ${visible[index] ? "open" : ""}`}
           >
-            <h2 className="collapse-articles__dropdown__title">{item.title}</h2>
-            <span className="separator" />
+            <header className="collapse-articles__dropdown__header">
+              <h2 className="collapse-articles__dropdown__title">
+                {item.title}
+              </h2>
+              <button
+                className="collapse-articles__dropdown__closeBtn"
+                onClick={() => toggleVisibility(index)}
+              >
+                <i className="fa-solid fa-xmark" />
+              </button>
+            </header>
+            <hr className="separator" />
             <Scroller>
               {item.sources &&
                 Object.keys(item.sources).map((key) => (
@@ -78,7 +84,7 @@ export default function CollapseArticles() {
                   </button>
                 ))}
             </Scroller>
-          </div>
+          </aside>
         ))}
       </div>
 

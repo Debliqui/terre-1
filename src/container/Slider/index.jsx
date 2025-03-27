@@ -30,9 +30,6 @@ export default function Slider() {
 
   return (
     <div className="slider">
-      <button className="slider__button left" onClick={previous}>
-        <img className="arrow-svg" src={ArrowPrev} alt="Précédent" />
-      </button>
       <div className="slider__content">
         {ArticlesContent.map((article, index) => (
           <img
@@ -45,6 +42,9 @@ export default function Slider() {
           />
         ))}
       </div>
+      <button className="slider__button left" onClick={previous}>
+        <img className="arrow-svg" src={ArrowPrev} alt="Précédent" />
+      </button>
       <button className="slider__button right" onClick={next}>
         <img className="arrow-svg" src={ArrowNext} alt="Suivant" />
       </button>

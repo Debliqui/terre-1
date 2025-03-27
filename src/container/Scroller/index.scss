@@ -1,3 +1,9 @@
+@mixin screen_mobile {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
 .scroller {
   width: 100%;
   height: 100%;
@@ -8,13 +14,16 @@
   &__button {
     position: absolute;
     border: none;
-    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #e3e3e3;
     padding: 0;
+    border-radius: 8px;
+    width: 100%;
+    opacity: 0.5;
     cursor: pointer;
+    z-index: 1;
     .arrow {
       width: 30px;
       height: 30px;
@@ -24,17 +33,16 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     width: 100%;
-    height: 77vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 48px;
-    margin-bottom: 60px;
+    margin-bottom: 95px;
   }
   .up {
-    top: 8px;
+    top: 0;
   }
   .down {
-    bottom: 24px;
+    bottom: 95px;
   }
 }
