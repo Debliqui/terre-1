@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "catchphrase": "Comprendre",
     "title": "Comprendre votre nouvel environnement",
     "content": "Contenu du Collapse 1",
     "sources": {
@@ -45,6 +46,7 @@
   },
   {
     "id": 2,
+    "catchphrase": "S'intégrer",
     "title": "Comment se fondre parmi les humains ?",
     "content": "Contenu du Collapse 2",
     "sources": {
@@ -97,6 +99,7 @@
   },
   {
     "id": 3,
+    "catchphrase": "Explorer",
     "title": "Explorer les nations de la Terre",
     "content": "Contenu du Collapse 3",
     "sources": {

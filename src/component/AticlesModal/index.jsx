@@ -59,14 +59,14 @@ export default function ArticlesModal({ data, onClose }) {
           </div>
           <div className="articles-modal__content">
             <h2 className="articles-modal__content__title">{data.title}</h2>
-            <span className="separator" />
+            <hr className="separator" />
             <div className="articles-modal__content__text">
               <h3 className="articles-modal__content__text__subtitle">
                 {data.subtitle}
               </h3>
-              <p className="articles-modal__content__text__description">
-                {data.description}
-              </p>
+              <div className="articles-modal__content__text__description">
+                <p>{data.description}</p>
+              </div>
             </div>
           </div>
         </>

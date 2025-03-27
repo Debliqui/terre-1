@@ -1,7 +1,17 @@
+@mixin screen_tiny {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+@mixin screen_mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
 .popUp {
   &__openBtn {
     width: 26px;
-    height: 78px;
     border: none;
     border-radius: 10px 0 0 10px;
     display: inline-block;
@@ -12,40 +22,85 @@
     font-size: 16px;
     color: var(--color);
     background-color: var(--background-root);
+    padding: 16px 0;
+    @include screen_tiny {
+      font-size: 14px;
+      padding: 14px 0;
+    }
   }
   &__content {
-    width: 250px;
-    padding: 8px;
+    width: 272px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     align-items: end;
     border: none;
     border-radius: 10px;
     background: var(--background-root);
+    @include screen_mobile {
+      width: 250px;
+    }
+    @include screen_tiny {
+      background: var(--background-main);
+    }
     .info {
-      margin-top: -12px;
-      &__content {
-        width: 95%;
-      }
       &__title {
         font-size: 24px;
         font-family: var(--body-font);
         font-weight: bold;
+        @include screen_mobile {
+          font-size: 20px;
+        }
+      }
+      &__content {
+        width: 100%;
+        @include screen_tiny {
+          width: 80%;
+        }
+        &__title {
+          font-family: var(--body-font);
+          font-size: 20px;
+          font-weight: 600;
+          padding: 8px;
+          @include screen_mobile {
+            font-size: 16px;
+            padding: 8px 0;
+          }
+        }
+        &__texte {
+          font-size: 16px;
+          padding: 8px;
+          @include screen_mobile {
+            font-size: 14px;
+            padding: 8px 0;
+          }
+        }
       }
     }
     .contactForm {
-      gap: 6px;
-      & label {
-        font-family: var(--body-font);
-        font-size: 14px;
-        font-weight: 300;
-      }
+      gap: 8px;
       &__title {
         font-family: var(--body-font);
-        font-size: 18px;
+        font-weight: 600;
+        font-size: 20px;
+        @include screen_mobile {
+          font-size: 16px;
+        }
       }
       &__description {
-        font-size: 14px;
+        font-size: 18px;
+        @include screen_mobile {
+          font-size: 14px;
+        }
+      }
+      & label {
+        font-family: var(--body-font);
+        font-size: 16px;
+        font-weight: 300;
+        @include screen_mobile {
+          font-size: 14px;
+          font-weight: 400;
+        }
       }
       .submitBtn {
         width: 160px;
@@ -62,6 +117,7 @@
         overflow: hidden;
         cursor: pointer;
         margin: 0 auto;
+        margin-top: 10px;
         &__text {
           font-size: 18px;
         }
@@ -113,10 +169,17 @@
     }
   }
   &__closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
     border: none;
     width: 24px;
     height: 24px;
     background: transparent;
+    @include screen_tiny {
+      top: 32px;
+      right: 32px;
+    }
     & i {
       font-size: 18px;
       color: var(--color);
