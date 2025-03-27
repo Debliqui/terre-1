@@ -126,10 +126,6 @@ span {
       align-items: end;
       gap: 16px;
       width: 100%;
-      @include screen_mobile {
-        margin-bottom: -90px;
-        z-index: 1;
-      }
       @include screen_tiny {
         margin-bottom: 0;
       }

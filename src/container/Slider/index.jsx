@@ -7,6 +7,7 @@ import ArrowNext from "../../assets/icon/arrow-next.svg"
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   const previous = () => {
     setCurrentSlide(
@@ -21,16 +22,21 @@ export default function Slider() {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      next()
-    }, 5000)
+    if (!isPaused) {
+      const timer = setTimeout(() => {
+        next()
+      }, 5000)
+      return () => clearTimeout(timer)
+    }
+  }, [currentSlide, isPaused])
 
-    return () => clearTimeout(timer)
-  }, [currentSlide])
+  const togglePause = () => {
+    setIsPaused(!isPaused)
+  }
 
   return (
-    <div className="slider">
-      <div className="slider__content">
+    <div className="slider" aria-label="Carrousel">
+      <div className="slider__content" aria-live="polite" aria-label="Images">
         {ArticlesContent.map((article, index) => (
           <img
             className={`slider__content__slide ${
@@ -39,14 +45,42 @@ export default function Slider() {
             key={index}
             src={article.sources.src1.src}
             alt={article.sources.src1.alt}
+            aria-hidden={index !== currentSlide}
           />
         ))}
       </div>
-      <button className="slider__button left" onClick={previous}>
+      <button
+        className="slider__button prev"
+        onClick={previous}
+        aria-label="Image précédente"
+      >
         <img className="arrow-svg" src={ArrowPrev} alt="Précédent" />
       </button>
-      <button className="slider__button right" onClick={next}>
+      <button
+        className="slider__button next"
+        onClick={next}
+        aria-label="Image suivante"
+      >
         <img className="arrow-svg" src={ArrowNext} alt="Suivant" />
+      </button>
+      <button
+        className="slider__button pause"
+        onClick={togglePause}
+        aria-label={
+          isPaused ? "Reprendre le carrousel" : "Mettre le carrousel en pause"
+        }
+      >
+        {isPaused ? (
+          <>
+            <span className="play-pause">Reprendre</span>
+            <i className="fa-solid fa-play" />
+          </>
+        ) : (
+          <>
+            <span className="play-pause">Pause</span>
+            <i className="fa-solid fa-pause" />
+          </>
+        )}
       </button>
     </div>
   )
