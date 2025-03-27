@@ -7,9 +7,21 @@ export default function Settings() {
   const { toggleTheme } = useContext(ThemeContext)
   return (
     <div className="settings">
-      <button className="themeBtn light" onClick={() => toggleTheme("light")} />
-      <button className="themeBtn dark" onClick={() => toggleTheme("dark")} />
-      <button className="themeBtn blue" onClick={() => toggleTheme("blue")} />
+      <button
+        className="themeBtn light"
+        onClick={() => toggleTheme("light")}
+        aria-label="Activer le thème lumineux"
+      />
+      <button
+        className="themeBtn dark"
+        onClick={() => toggleTheme("dark")}
+        aria-label="Activer le thème sombre"
+      />
+      <button
+        className="themeBtn blue"
+        onClick={() => toggleTheme("blue")}
+        aria-label="Activer le thème bleu"
+      />
     </div>
   )
 }
