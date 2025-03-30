@@ -1,14 +1,32 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import "./index.scss"
 
 function PopUpContent({ title, children, toggleVisibility }) {
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    contentRef.current?.focus()
+  }, [])
+
   return (
-    <div className="popUp__content">
-      <button className="popUp__closeBtn" onClick={toggleVisibility}>
+    <div
+      className="popUp__content"
+      aria-label={`Fenêtre ${title}`}
+      aria-modal="true"
+      ref={contentRef}
+      tabIndex="-1"
+    >
+      <button
+        className="popUp__closeBtn"
+        onClick={toggleVisibility}
+        aria-label="Fermer la fenêtre"
+      >
         <i className="fa-solid fa-xmark" />
       </button>
       <div className="info">
-        <h2 className="info__title">{title}</h2>
+        <h2 id={`popup-title-${title}`} className="info__title">
+          {title}
+        </h2>
         <hr className="separator" />
         {children}
       </div>
@@ -18,12 +36,22 @@ function PopUpContent({ title, children, toggleVisibility }) {
 
 function PopUpButton({ label, title, children, isVisible, toggleVisibility }) {
   return (
-    <div className="popUp">
-      <button className="popUp__openBtn" onClick={toggleVisibility}>
+    <div className="popUp" aria-label={`Information ${title}`}>
+      <button
+        className="popUp__openBtn"
+        onClick={toggleVisibility}
+        aria-label={`Ouvrir la fenêtre ${title}`}
+        aria-expanded={isVisible}
+        aria-controls={`popup-content-${title}`}
+      >
         {label}
       </button>
       {isVisible && (
-        <PopUpContent title={title} toggleVisibility={toggleVisibility}>
+        <PopUpContent
+          title={title}
+          toggleVisibility={toggleVisibility}
+          id={`popup-content-${title}`}
+        >
           <div className="info__content">{children}</div>
         </PopUpContent>
       )}
@@ -36,6 +64,7 @@ export default function PopUp() {
 
   const submitBtnRef = useRef(null)
   const btnTextRef = useRef(null)
+  const messageBoxRef = useRef(null)
 
   function toggleVisibility(popUp) {
     setVisiblePopUp(visiblePopUp === popUp ? null : popUp)
@@ -43,9 +72,9 @@ export default function PopUp() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    btnTextRef.current.innerHTML = "Merci"
-    submitBtnRef.current.classList.add("send")
+    messageBoxRef.current.innerHTML = "Votre message a bien été envoyé !"
   }
+
   return (
     <>
       <PopUpButton
@@ -54,24 +83,41 @@ export default function PopUp() {
         isVisible={visiblePopUp === "contact"}
         toggleVisibility={() => toggleVisibility("contact")}
       >
-        <form className="contactForm" onSubmit={handleSubmit}>
+        <form
+          className="contactForm"
+          onSubmit={handleSubmit}
+          aria-label="Formulaire de contact"
+        >
           <h3 className="contactForm__title">Vous avez des questions ?</h3>
           <p className="contactForm__description">Laissez moi un message!</p>
+          <span className="contactForm__message" ref={messageBoxRef} />
           <label htmlFor="nom">Nom</label>
-          <input type="text" id="nom" required />
+          <input type="text" id="nom" required aria-required="true" />
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" maxLength={500} required />
+          <input
+            type="email"
+            id="email"
+            maxLength={500}
+            required
+            aria-required="true"
+          />
           <label htmlFor="message">Message</label>
-          <textarea id="message" required rows="5" cols="33" maxLength={500} />
-          <button className="submitBtn" ref={submitBtnRef}>
+          <textarea
+            id="message"
+            required
+            rows="5"
+            cols="33"
+            maxLength={500}
+            aria-required="true"
+          />
+          <button
+            className="submitBtn"
+            ref={submitBtnRef}
+            aria-label="Envoyer le formulaire"
+          >
             <p className="submitBtn__text" ref={btnTextRef}>
               Envoyer
             </p>
-            <div className="check-box">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-              </svg>
-            </div>
           </button>
         </form>
       </PopUpButton>
@@ -83,25 +129,21 @@ export default function PopUp() {
       >
         <h3 className="info__content__title">Bienvenue sur Terre 1!</h3>
         <p className="info__content__texte">
-          Se guide est conçu pour les nouveaux arrivants découvrant notre belle
+          Ce guide est conçu pour les nouveaux arrivants découvrant notre belle
           planète. <br />
-          {""}
           <br />
           Ce site est votre manuel d'accompagnement pour comprendre les
           merveilles de la Terre, apprendre à interagir avec ses habitants et
           explorer ses nombreuses nations fascinantes.
           <br />
-          {""}
           <br />
           Que vous soyez curieux des cieux au-dessus de nous, des mystères des
           abysses ou des cultures humaines, Terre 1 est là pour illuminer votre
           voyage. <br />
-          {""}
           <br />
           C'est une invitation à observer, apprendre et embrasser la diversité
           de notre monde.
           <br />
-          {""}
           <br />
           Laissez-nous être votre compagnon pour naviguer dans cette nouvelle
           aventure!
