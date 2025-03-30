@@ -27,6 +27,7 @@ body.light {
   --background-root: #ffffff;
   --color: #000000;
   --color-reverse: #ffffff;
+  --color-validation: #048715;
 }
 
 body.dark {
@@ -38,6 +39,7 @@ body.dark {
   --background-root: #302f2f;
   --color: #ffffff;
   --color-reverse: #000000;
+  --color-validation: #23dc3d;
 }
 
 body.blue {
@@ -45,6 +47,7 @@ body.blue {
   --background-root: #565555;
   --color: #ffffff;
   --color-reverse: #000000;
+  --color-validation: #00ff24;
 }
 body {
   background: var(--background-root);

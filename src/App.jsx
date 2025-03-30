@@ -26,7 +26,7 @@ function App() {
         </div>
       </header>
       <section className="main__navigation">
-        <nav className="nav">
+        <nav aria-label="Informations" className="nav">
           <PopUp />
         </nav>
         <CollapseArticles />
